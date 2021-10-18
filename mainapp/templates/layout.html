@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <title>Anor</title>
     <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}">
 </head>
 <body>
-{% block content %}
-
-{% endblock content %}
+<div class="container pt-4" >
+    {% block content %}
+    {% endblock content %}
+</div>
 <script src="{% static 'vendor/jquery-3.6.0.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'main/js/main.js' %}"></script>
 </body>
 </html>

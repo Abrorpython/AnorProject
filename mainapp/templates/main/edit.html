@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form action="{% if d %}{% url 'update' d.id %}{% else %}{% url 'create' %}{% endif %}" method="post" class="form">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="id-name">Davlat nomi</label>
+            <input type="text" class="form-control" placeholder="Davlat nomini kiriting" name="name" value="{{ d.name }}">
+        </div>
+        <button type="submit" class="btn btn-success">{% if d %}Tahrirlash{% else %}Qo'shish{% endif %}</button>
+    </form>
+
+{% endblock content %}

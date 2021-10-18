@@ -1,4 +1,19 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <a href="#" class="btn btn-success">Go</a>
+        <div class="text-right mb-4">
+            <a href="{% url 'create' %}" class="btn btn-info">Qo'shish</a>
+        </div>
+        <div class="list-group">
+        {% for d in list %}
+            <div class="list-group-item d-flex align-items-center" style="display: flex; justify-content: flex-end">
+                <div>{{ d.name }}</div>
+                <a href="{% url 'update' d.id %}" class="btn btn-sm btn-warning ml-auto">
+                    <i class="bi-pencil text-white"></i>
+                </a>
+                <a href="{% url 'delete' d.id %}" class="btn btn-sm btn-danger ml-2">
+                    <i class="bi-trash text-white"></i>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
 {% endblock content %}
